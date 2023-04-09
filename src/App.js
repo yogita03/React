@@ -57,8 +57,9 @@ function App() {
                         <ExpenseItem title={Val.title} index = {index + 1}
                             amount={Val.amount}
                             date={Val.date}
-                            location={Val.location}>
-                             </ExpenseItem>
+                            location={Val.location}
+                            />
+                             
                     </div>
                 )
             })}
