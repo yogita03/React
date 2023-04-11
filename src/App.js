@@ -52,16 +52,18 @@ const App = () => {
       
       <div>
       <h2> Expense Tracker</h2>
-     {expenses.map((Val,index) => {
+     {expenses.map((Val) => {
                 return (
+                  <li key={Val.id}>
                     <div>
-                        <ExpenseItem title={Val.title} index = {index + 1}
+                        <ExpenseItem title={Val.title} 
                             amount={Val.amount}
                             date={Val.date}
                             location={Val.location}
                             />
                              
                     </div>
+                    </li>
                 )
             })}
 

@@ -13,11 +13,11 @@ const ExpenseDetails = (props) =>{
             </div>
             <div style={{display: "flex" , justifyContent: "space-around", alignItems: "center", minWidth:"200px"
             }}>
-             <div className="expense-item__text" >
+             <div className="expense-item__description" >
             <h2>{location}</h2></div> 
             <div className="expense-item__price">${amount} </div>
             </div>
-            </>
+        </>
     );
     
     
