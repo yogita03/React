@@ -6,12 +6,12 @@ import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
   
-    const [amount, setAmount] = useState(props.amount);
+    const [title, setTitle] = useState(props.title);
     
     const clickHandler = () => {
        
-        setAmount('100');
-        console.log(amount);
+        setTitle('Updated');
+        console.log(title);
     };
        return (
           
@@ -19,13 +19,13 @@ const ExpenseItem = (props) => {
            <ExpenseDate date={props.date} />
            <div className="expense-item__description">
             {/* <p> {props.index}</p> */}
-            <h2>{props.title}</h2>
+            <h2>{title}</h2>
            
             {/* <div style={{display: "flex" , justifyContent: "space-around", alignItems: "center", minWidth:"200px"
             }}> */}
              <div className="expense-item__description" >
             <h2>{props.location}</h2>
-            <div className="expense-item__price">${amount} </div>
+            <div className="expense-item__price">${props.amount} </div>
             </div>
             </div>
             {/* </div>  */}

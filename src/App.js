@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import React from 'react';
-import './App.css';
-import ExpenseItem from './components/Expenses/ExpenseItem';
+import NewExpense from './components/NewExpense/NewExpense';
+// import './App.css';
+import Expenses from './components/Expenses/Expenses';
 
 
 const App = () => {
@@ -31,9 +32,7 @@ const App = () => {
   ];
 
   // const list = {
-
-  
-  return (
+  // return (
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
@@ -49,27 +48,39 @@ const App = () => {
     //       Learn React
     //     </a>
     //   </header>
-      
-      <div>
-      <h2> Expense Tracker</h2>
-     {expenses.map((Val) => {
-                return (
-                  <li key={Val.id}>
-                    <div>
-                        <ExpenseItem title={Val.title} 
-                            amount={Val.amount}
-                            date={Val.date}
-                            location={Val.location}
-                            />
+    //   return(
+    //   <div>
+    //    <h2> Expense Tracker</h2> 
+    //   {/* // <div>
+    //   //   <NewExpense />
+    //   //   <Expenses items={expenses} />
+    //   // </div> */}
+    // //  {expenses.map((Val) => {
+    //             return (
+    //               <li key={Val.id}>
+    //                 <div>
+    //                     <ExpenseItem title={Val.title} 
+    //                         amount={Val.amount}
+    //                         date={Val.date}
+    //                         location={Val.location}
+    //                         />
                              
-                    </div>
-                    </li>
-                )
-            })}
+    //                 </div>
+    //                 </li>
+    //             )
+    //         })}
 
-    </div>
+    // </div>
+    // );
+       
+    return (
+      <div>
+        <NewExpense />
+        <Expenses items={expenses} />
+      </div>
     );
 
-
 }
+
+
 export default App;
