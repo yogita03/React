@@ -1,12 +1,10 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React, { useState} from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 // import './App.css';
 import Expenses from './components/Expenses/Expenses';
 
-
-const App = () => {
-  const expenses = [
+ const DUMMY_EXPENSES = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -31,53 +29,14 @@ const App = () => {
     },
   ];
 
-  // const list = {
-  // return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    //   return(
-    //   <div>
-    //    <h2> Expense Tracker</h2> 
-    //   {/* // <div>
-    //   //   <NewExpense />
-    //   //   <Expenses items={expenses} />
-    //   // </div> */}
-    // //  {expenses.map((Val) => {
-    //             return (
-    //               <li key={Val.id}>
-    //                 <div>
-    //                     <ExpenseItem title={Val.title} 
-    //                         amount={Val.amount}
-    //                         date={Val.date}
-    //                         location={Val.location}
-    //                         />
-                             
-    //                 </div>
-    //                 </li>
-    //             )
-    //         })}
+  const App = () => {
+   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-    // </div>
-    // );
-     
-    // const [edata , setData] = useState([...expenses])
     const addExpenseHandler = (expense) => {
-      console.log('In App.js');
-      console.log(expense);
-    }
+      setExpenses(prevExpenses => {
+        return [expense, ...prevExpenses]
+      });
+    };
        
     return (
       <div>
